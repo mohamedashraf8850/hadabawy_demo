@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_open_whatsapp/flutter_open_whatsapp.dart';
@@ -17,6 +18,7 @@ class SnackBarDemo extends StatelessWidget {
 
     return MaterialApp(
       title: 'هضباوي تاكسي',
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: SnackBarPage(),
         backgroundColor: Colors.black,
@@ -80,20 +82,51 @@ class _SnackBarPageState extends State<SnackBarPage> {
           ),
           Positioned(
             top: 500,
-            left: 150,
-            child: FlatButton(
-              color: Colors.black,
-              onPressed: () async {
-                FlutterOpenWhatsapp.sendSingleMessage("+201552369082", "");
-              },
-              child: Center(
-                child: Text(
-                  'Order Now',
-                  style: TextStyle(color: Color(0xFFF8C72D)),
+            left: 10,
+            right: 10,
+            child: Container(
+              width: MediaQuery.of(context).size.width - 10,
+              child: FlatButton(
+                color: Colors.black,
+                onPressed: () async {
+                  FlutterOpenWhatsapp.sendSingleMessage("+201552369082", "");
+                },
+                child: Center(
+                  child: Text(
+                    'Order Now',
+                    style: TextStyle(color: Color(0xFFF8C72D)),
+                  ),
                 ),
               ),
             ),
           ),
+          Positioned(
+              top: 660,
+              left: 25,
+              right: 25,
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'final version at 1/1/2021  ',
+                      style: TextStyle(
+                        fontSize: 25,
+                        color: Colors.white,
+                      ),
+                    ),
+                    Text('Soon',
+                        style: TextStyle(
+                            decoration: TextDecoration.underline,
+                            fontSize: 30,
+                            fontStyle: FontStyle.italic,
+                            fontWeight: FontWeight.bold,
+                            decorationStyle: TextDecorationStyle.double,
+                            color: Color(0xFFF8C72D))),
+                  ],
+                ),
+              ))
         ],
       ),
     );
