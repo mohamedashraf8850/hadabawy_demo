@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_open_whatsapp/flutter_open_whatsapp.dart';
 import 'package:flutter_statusbarcolor/flutter_statusbarcolor.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 void main() {
   runApp(SnackBarDemo());
@@ -81,7 +80,7 @@ class _SnackBarPageState extends State<SnackBarPage> {
             fit: BoxFit.fill,
           ),
           Positioned(
-            top: 500,
+            top: 350,
             left: 10,
             right: 10,
             child: Container(
@@ -100,33 +99,6 @@ class _SnackBarPageState extends State<SnackBarPage> {
               ),
             ),
           ),
-          Positioned(
-              top: 660,
-              left: 25,
-              right: 25,
-              child: Container(
-                width: MediaQuery.of(context).size.width,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'final version at 1/1/2021  ',
-                      style: TextStyle(
-                        fontSize: 25,
-                        color: Colors.white,
-                      ),
-                    ),
-                    Text('Soon',
-                        style: TextStyle(
-                            decoration: TextDecoration.underline,
-                            fontSize: 30,
-                            fontStyle: FontStyle.italic,
-                            fontWeight: FontWeight.bold,
-                            decorationStyle: TextDecorationStyle.double,
-                            color: Color(0xFFF8C72D))),
-                  ],
-                ),
-              ))
         ],
       ),
     );
